@@ -137,37 +137,57 @@ class Login extends React.Component {
         <Stack.Screen name="CadastraTarefa" component={CadastraTarefa} />
         <Stack.Screen name="ExibeTarefa" component={ExibeTarefa} />
         <Stack.Screen name="EditaTarefa" component={EditaTarefa} />
+        <Stack.Screen name="TelaRelogio" component={TelaRelogio} />
       </Stack.Navigator>
     );
   }
 }
 
-
 class Tarefas extends React.Component {
-  paginas = ["Dia1", "Dia2", "Dia3", "Dia4", "Dia5", "Dia6", "Dia7",
-             "Dia8", "Dia9", "Dia10", "Dia11", "Dia12", "Dia13", "Dia14",
-             "Dia15", "Dia16", "Dia17", "Dia18", "Dia19", "Dia20", "Dia21",
-             "Dia22", "Dia23", "Dia24", "Dia25", "Dia26", "Dia27", "Dia28",
-             "Dia29", "Dia30", "Dia31"
-  ]
+  paginas = [
+    'Dia1',
+    'Dia2',
+    'Dia3',
+    'Dia4',
+    'Dia5',
+    'Dia6',
+    'Dia7',
+    'Dia8',
+    'Dia9',
+    'Dia10',
+    'Dia11',
+    'Dia12',
+    'Dia13',
+    'Dia14',
+    'Dia15',
+    'Dia16',
+    'Dia17',
+    'Dia18',
+    'Dia19',
+    'Dia20',
+    'Dia21',
+    'Dia22',
+    'Dia23',
+    'Dia24',
+    'Dia25',
+    'Dia26',
+    'Dia27',
+    'Dia28',
+    'Dia29',
+    'Dia30',
+    'Dia31',
+  ];
 
   goToDia(dia) {
     console.log(dia);
-    this.props.navigation.navigate(this.paginas[dia-1]);
+    this.props.navigation.navigate(this.paginas[dia - 1]);
   }
   render() {
     return (
       <View
-        style={{
-          flex: 1,
-          justifyContent: 'space-around',
-          flexDirection: 'column',
-        }}>
+        style={styles.Container}>
         <View
-          style={{
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-          }}>
+          style={styles.Semana}>
           <TouchableOpacity onPress={() => this.goToDia(1)}>1</TouchableOpacity>
           <TouchableOpacity onPress={() => this.goToDia(2)}>2</TouchableOpacity>
           <TouchableOpacity onPress={() => this.goToDia(3)}>3</TouchableOpacity>
@@ -177,58 +197,306 @@ class Tarefas extends React.Component {
           <TouchableOpacity onPress={() => this.goToDia(7)}>7</TouchableOpacity>
         </View>
         <View
-          style={{
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-          }}>
+          style={styles.Semana}>
           <TouchableOpacity onPress={() => this.goToDia(8)}>8</TouchableOpacity>
           <TouchableOpacity onPress={() => this.goToDia(9)}>9</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(10)}>10</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(11)}>11</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(12)}>12</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(13)}>13</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(14)}>14</TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(10)}>
+            10
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(11)}>
+            11
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(12)}>
+            12
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(13)}>
+            13
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(14)}>
+            14
+          </TouchableOpacity>
         </View>
         <View
-          style={{
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-          }}>
-          <TouchableOpacity onPress={() => this.goToDia(15)}>15</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(16)}>16</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(17)}>17</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(18)}>18</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(19)}>19</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(20)}>20</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(21)}>21</TouchableOpacity>
+          style={styles.Semana}>
+          <TouchableOpacity onPress={() => this.goToDia(15)}>
+            15
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(16)}>
+            16
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(17)}>
+            17
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(18)}>
+            18
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(19)}>
+            19
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(20)}>
+            20
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(21)}>
+            21
+          </TouchableOpacity>
         </View>
         <View
-          style={{
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-          }}>
-          <TouchableOpacity onPress={() => this.goToDia(22)}>22</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(23)}>23</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(24)}>24</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(25)}>25</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(26)}>26</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(27)}>27</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(28)}>28</TouchableOpacity>
+          style={styles.Semana}>
+          <TouchableOpacity onPress={() => this.goToDia(22)}>
+            22
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(23)}>
+            23
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(24)}>
+            24
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(25)}>
+            25
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(26)}>
+            26
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(27)}>
+            27
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(28)}>
+            28
+          </TouchableOpacity>
         </View>
         <View
-          style={{
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-            marginRight: '7%',
-          }}>
-          <TouchableOpacity onPress={() => this.goToDia(29)}>29</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(30)}>30</TouchableOpacity>
-          <TouchableOpacity onPress={() => this.goToDia(31)}>31</TouchableOpacity>
+          style={styles.Semana}>
+          <TouchableOpacity onPress={() => this.goToDia(29)}>
+            29
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(30)}>
+            30
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.goToDia(31)}>
+            31
+          </TouchableOpacity>
           <TouchableOpacity></TouchableOpacity>
           <TouchableOpacity></TouchableOpacity>
           <TouchableOpacity></TouchableOpacity>
           <TouchableOpacity></TouchableOpacity>
         </View>
+      </View>
+    );
+  }
+}
+
+class CadastraTarefa extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      titulo: '',
+      descricao: '',
+      horario: '', // Novo campo para horário
+    };
+  }
+
+  // Função para salvar a tarefa, incluindo o horário
+  async salvarTarefa() {
+    const { titulo, descricao, horario } = this.state;
+
+    if (titulo && descricao && horario) {
+      // Carrega as tarefas atuais e adiciona a nova
+      let tarefasExistentes =
+        JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
+      tarefasExistentes.push({ titulo, descricao, horario });
+
+      // Salva as tarefas atualizadas no AsyncStorage
+      await AsyncStorage.setItem(
+        'tarefasDia1',
+        JSON.stringify(tarefasExistentes)
+      );
+      alert('Tarefa salva com sucesso!');
+
+      // Retorna para a página Dia1
+      this.props.navigation.navigate('Dia1');
+    } else {
+      alert('Por favor, preencha todos os campos.');
+    }
+  }
+
+  // Função para verificar se algum horário foi atingido
+  verificarHorarioTarefas = () => {
+    setInterval(async () => {
+      let tarefasExistentes =
+        JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
+
+      const horaAtual = new Date();
+      const horaFormatada = `${horaAtual.getHours()}:${horaAtual.getMinutes()}`;
+
+      // Verifica se o horário de alguma tarefa foi atingido
+      tarefasExistentes.forEach((tarefa) => {
+        if (tarefa.horario === horaFormatada) {
+          // Navega para a tela com a imagem do relógio e o título da tarefa
+          this.props.navigation.navigate('TelaRelogio', {
+            titulo: tarefa.titulo,
+          });
+        }
+      });
+    }, 60000); // Verifica a cada minuto
+  };
+
+  // Chama a verificação ao montar o componente
+  componentDidMount() {
+    this.verificarHorarioTarefas();
+  }
+
+  render() {
+    return (
+      <View style={styles.ContainerInput}>
+        <TextInput
+          style={TextInput}
+          placeholder="Título"
+          onChangeText={(texto) => this.setState({ titulo: texto })}
+        />
+        <TextInput
+          style={TextInput}
+          placeholder="Descrição"
+          onChangeText={(texto) => this.setState({ descricao: texto })}
+        />
+        <TextInput
+          style={TextInput}
+          placeholder="Horário (HH:mm)"
+          onChangeText={(texto) => this.setState({ horario: texto })}
+        />
+        <TouchableOpacity onPress={() => this.salvarTarefa()}>
+          <MaterialCommunityIcons name="check" color="black" size={20} />
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
+
+class ExibeTarefa extends React.Component {
+  goToEditaTarefa(tarefa) {
+    this.props.navigation.navigate('EditaTarefa', { tarefa });
+  }
+
+  async deletarTarefa() {
+    const { tarefa } = this.props.route.params;
+
+    // Carrega as tarefas do AsyncStorage e remove a tarefa atual
+    let tarefasDia1 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
+    tarefasDia1 = tarefasDia1.filter(
+      (item) =>
+        !(
+          item.titulo === tarefa.titulo &&
+          item.descricao === tarefa.descricao &&
+          item.horario === tarefa.horario
+        )
+    );
+
+    await AsyncStorage.setItem('tarefasDia1', JSON.stringify(tarefasDia1));
+    alert('Tarefa excluída com sucesso!');
+    this.props.navigation.navigate('Dia1');
+  }
+
+  render() {
+    const { tarefa } = this.props.route.params;
+
+    return (
+      <View style={styles.ExibeTarefaContainer}>
+        <Text style={styles.Titulo}>
+          {tarefa.titulo}
+        </Text>
+        <Text style={styles.Descricao}>{tarefa.descricao}</Text>
+        <Text
+          style={styles.Horario}>{`Horário: ${tarefa.horario}`}</Text>
+
+        <View style={styles.TouchableOpacityContainer}>
+          <TouchableOpacity
+            onPress={() => this.goToEditaTarefa(tarefa)}
+            style={styles.TouchableOpacityExibeTarefa}>
+            <MaterialCommunityIcons name="pencil" color="black" size={24} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.deletarTarefa()}>
+            <MaterialCommunityIcons name="trash-can" color="black" size={24} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+}
+
+class EditaTarefa extends React.Component {
+  constructor(props) {
+    super(props);
+    const { tarefa } = this.props.route.params;
+    this.state = {
+      titulo: tarefa.titulo,
+      descricao: tarefa.descricao,
+      horario: tarefa.horario, // Novo campo para horário
+      originalTarefa: tarefa,
+    };
+  }
+
+  async salvarEdicao() {
+    const { titulo, descricao, horario, originalTarefa } = this.state;
+
+    // Carrega todas as tarefas e atualiza a tarefa selecionada
+    let tarefasDia1 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
+    tarefasDia1 = tarefasDia1.map((tarefa) => {
+      if (
+        tarefa.titulo === originalTarefa.titulo &&
+        tarefa.descricao === originalTarefa.descricao &&
+        tarefa.horario === originalTarefa.horario
+      ) {
+        return { titulo, descricao, horario }; // Atualiza o horário também
+      }
+      return tarefa;
+    });
+
+    await AsyncStorage.setItem('tarefasDia1', JSON.stringify(tarefasDia1));
+    alert('Tarefa editada com sucesso!');
+    this.props.navigation.navigate('Dia1');
+  }
+
+  render() {
+    return (
+      <View style={ViewContainer}>
+        <TextInput
+          style={styles.InputEdicaoTarefa}
+          value={this.state.titulo}
+          onChangeText={(texto) => this.setState({ titulo: texto })}
+        />
+        <TextInput
+          style={styles.InputEdicaoTarefa}
+          value={this.state.descricao}
+          onChangeText={(texto) => this.setState({ descricao: texto })}
+        />
+        <TextInput
+          style={{ textAlign: 'center', marginBottom: 20, fontSize: 18 }}
+          value={this.state.horario}
+          onChangeText={(texto) => this.setState({ horario: texto })}
+          placeholder="Horário (HH:mm)"
+        />
+        <TouchableOpacity onPress={() => this.salvarEdicao()}>
+          <MaterialCommunityIcons name="check" color="black" size={24} />
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
+
+class TelaRelogio extends React.Component {
+  render() {
+    const { titulo } = this.props.route.params; // Obtém o título da tarefa
+
+    return (
+      <View style={ContainerTelaRelogio}>
+        <Text style={TxtTelaRelogio}>
+          Hora de realizar a tarefa: {titulo}
+        </Text>
+        <Image
+          source={require('./assets/relogio.png')} // Substitua com o caminho da imagem do relógio
+          style={ImgTelaRelogio}
+        />
       </View>
     );
   }
@@ -243,7 +511,8 @@ class Dia1 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia1 = JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
+    const tarefasDia1 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
     this.setState({ tarefas: tarefasDia1 });
   }
 
@@ -268,16 +537,17 @@ class Dia1 extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+      <View style={styles.ViewDia}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -297,7 +567,8 @@ class Dia2 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia2 = JSON.parse(await AsyncStorage.getItem('tarefasDia2')) || [];
+    const tarefasDia2 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia2')) || [];
     this.setState({ tarefas: tarefasDia2 });
   }
 
@@ -323,15 +594,16 @@ class Dia2 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -351,7 +623,8 @@ class Dia3 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia3 = JSON.parse(await AsyncStorage.getItem('tarefasDia3')) || [];
+    const tarefasDia3 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia3')) || [];
     this.setState({ tarefas: tarefasDia3 });
   }
 
@@ -377,15 +650,16 @@ class Dia3 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -405,7 +679,8 @@ class Dia4 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia4 = JSON.parse(await AsyncStorage.getItem('tarefasDia4')) || [];
+    const tarefasDia4 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia4')) || [];
     this.setState({ tarefas: tarefasDia4 });
   }
 
@@ -431,15 +706,16 @@ class Dia4 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -459,7 +735,8 @@ class Dia5 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia5 = JSON.parse(await AsyncStorage.getItem('tarefasDia5')) || [];
+    const tarefasDia5 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia5')) || [];
     this.setState({ tarefas: tarefasDia5 });
   }
 
@@ -485,15 +762,16 @@ class Dia5 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -513,7 +791,8 @@ class Dia6 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia6 = JSON.parse(await AsyncStorage.getItem('tarefasDia6')) || [];
+    const tarefasDia6 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia6')) || [];
     this.setState({ tarefas: tarefasDia6 });
   }
 
@@ -539,15 +818,16 @@ class Dia6 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -567,7 +847,8 @@ class Dia7 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia7 = JSON.parse(await AsyncStorage.getItem('tarefasDia7')) || [];
+    const tarefasDia7 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia7')) || [];
     this.setState({ tarefas: tarefasDia7 });
   }
 
@@ -593,15 +874,16 @@ class Dia7 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -621,7 +903,8 @@ class Dia8 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia8 = JSON.parse(await AsyncStorage.getItem('tarefasDia8')) || [];
+    const tarefasDia8 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia8')) || [];
     this.setState({ tarefas: tarefasDia8 });
   }
 
@@ -647,15 +930,16 @@ class Dia8 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -675,7 +959,8 @@ class Dia9 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia9 = JSON.parse(await AsyncStorage.getItem('tarefasDia9')) || [];
+    const tarefasDia9 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia9')) || [];
     this.setState({ tarefas: tarefasDia9 });
   }
 
@@ -701,15 +986,16 @@ class Dia9 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -729,7 +1015,8 @@ class Dia10 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia10 = JSON.parse(await AsyncStorage.getItem('tarefasDia10')) || [];
+    const tarefasDia10 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia10')) || [];
     this.setState({ tarefas: tarefasDia10 });
   }
 
@@ -755,15 +1042,16 @@ class Dia10 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -783,7 +1071,8 @@ class Dia11 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia11 = JSON.parse(await AsyncStorage.getItem('tarefasDia11')) || [];
+    const tarefasDia11 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia11')) || [];
     this.setState({ tarefas: tarefasDia11 });
   }
 
@@ -809,15 +1098,16 @@ class Dia11 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -837,7 +1127,8 @@ class Dia12 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia12 = JSON.parse(await AsyncStorage.getItem('tarefasDia12')) || [];
+    const tarefasDia12 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia12')) || [];
     this.setState({ tarefas: tarefasDia12 });
   }
 
@@ -863,15 +1154,16 @@ class Dia12 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -891,7 +1183,8 @@ class Dia13 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia13 = JSON.parse(await AsyncStorage.getItem('tarefasDia13')) || [];
+    const tarefasDia13 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia13')) || [];
     this.setState({ tarefas: tarefasDia13 });
   }
 
@@ -917,15 +1210,16 @@ class Dia13 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -945,7 +1239,8 @@ class Dia14 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia14 = JSON.parse(await AsyncStorage.getItem('tarefasDia14')) || [];
+    const tarefasDia14 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia14')) || [];
     this.setState({ tarefas: tarefasDia14 });
   }
 
@@ -971,15 +1266,16 @@ class Dia14 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -999,7 +1295,8 @@ class Dia15 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia15 = JSON.parse(await AsyncStorage.getItem('tarefasDia15')) || [];
+    const tarefasDia15 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia15')) || [];
     this.setState({ tarefas: tarefasDia15 });
   }
 
@@ -1025,15 +1322,16 @@ class Dia15 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1053,7 +1351,8 @@ class Dia16 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia16 = JSON.parse(await AsyncStorage.getItem('tarefasDia16')) || [];
+    const tarefasDia16 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia16')) || [];
     this.setState({ tarefas: tarefasDia16 });
   }
 
@@ -1079,15 +1378,16 @@ class Dia16 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1107,7 +1407,8 @@ class Dia17 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia17 = JSON.parse(await AsyncStorage.getItem('tarefasDia17')) || [];
+    const tarefasDia17 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia17')) || [];
     this.setState({ tarefas: tarefasDia17 });
   }
 
@@ -1133,15 +1434,16 @@ class Dia17 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1161,7 +1463,8 @@ class Dia18 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia18 = JSON.parse(await AsyncStorage.getItem('tarefasDia18')) || [];
+    const tarefasDia18 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia18')) || [];
     this.setState({ tarefas: tarefasDia18 });
   }
 
@@ -1187,15 +1490,16 @@ class Dia18 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1215,7 +1519,8 @@ class Dia19 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia19 = JSON.parse(await AsyncStorage.getItem('tarefasDia19')) || [];
+    const tarefasDia19 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia19')) || [];
     this.setState({ tarefas: tarefasDia19 });
   }
 
@@ -1241,15 +1546,16 @@ class Dia19 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1269,7 +1575,8 @@ class Dia20 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia20 = JSON.parse(await AsyncStorage.getItem('tarefasDia20')) || [];
+    const tarefasDia20 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia20')) || [];
     this.setState({ tarefas: tarefasDia20 });
   }
 
@@ -1295,15 +1602,16 @@ class Dia20 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1323,7 +1631,8 @@ class Dia21 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia21 = JSON.parse(await AsyncStorage.getItem('tarefasDia21')) || [];
+    const tarefasDia21 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia21')) || [];
     this.setState({ tarefas: tarefasDia21 });
   }
 
@@ -1349,15 +1658,16 @@ class Dia21 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1377,7 +1687,8 @@ class Dia22 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia22 = JSON.parse(await AsyncStorage.getItem('tarefasDia22')) || [];
+    const tarefasDia22 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia22')) || [];
     this.setState({ tarefas: tarefasDia22 });
   }
 
@@ -1403,15 +1714,16 @@ class Dia22 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1431,7 +1743,8 @@ class Dia23 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia23 = JSON.parse(await AsyncStorage.getItem('tarefasDia23')) || [];
+    const tarefasDia23 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia23')) || [];
     this.setState({ tarefas: tarefasDia23 });
   }
 
@@ -1457,15 +1770,16 @@ class Dia23 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1485,7 +1799,8 @@ class Dia24 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia24 = JSON.parse(await AsyncStorage.getItem('tarefasDia24')) || [];
+    const tarefasDia24 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia24')) || [];
     this.setState({ tarefas: tarefasDia24 });
   }
 
@@ -1511,15 +1826,16 @@ class Dia24 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1539,7 +1855,8 @@ class Dia25 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia25 = JSON.parse(await AsyncStorage.getItem('tarefasDia25')) || [];
+    const tarefasDia25 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia25')) || [];
     this.setState({ tarefas: tarefasDia25 });
   }
 
@@ -1565,15 +1882,16 @@ class Dia25 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1593,7 +1911,8 @@ class Dia26 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia26 = JSON.parse(await AsyncStorage.getItem('tarefasDia26')) || [];
+    const tarefasDia26 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia26')) || [];
     this.setState({ tarefas: tarefasDia26 });
   }
 
@@ -1619,15 +1938,16 @@ class Dia26 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1647,7 +1967,8 @@ class Dia27 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia27 = JSON.parse(await AsyncStorage.getItem('tarefasDia27')) || [];
+    const tarefasDia27 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia27')) || [];
     this.setState({ tarefas: tarefasDia27 });
   }
 
@@ -1673,15 +1994,16 @@ class Dia27 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1701,7 +2023,8 @@ class Dia28 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia28 = JSON.parse(await AsyncStorage.getItem('tarefasDia28')) || [];
+    const tarefasDia28 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia28')) || [];
     this.setState({ tarefas: tarefasDia28 });
   }
 
@@ -1727,15 +2050,16 @@ class Dia28 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1755,7 +2079,8 @@ class Dia29 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia29 = JSON.parse(await AsyncStorage.getItem('tarefasDia29')) || [];
+    const tarefasDia29 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia29')) || [];
     this.setState({ tarefas: tarefasDia29 });
   }
 
@@ -1781,15 +2106,16 @@ class Dia29 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1809,7 +2135,8 @@ class Dia30 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia30 = JSON.parse(await AsyncStorage.getItem('tarefasDia30')) || [];
+    const tarefasDia30 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia30')) || [];
     this.setState({ tarefas: tarefasDia30 });
   }
 
@@ -1835,15 +2162,16 @@ class Dia30 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1863,7 +2191,8 @@ class Dia31 extends React.Component {
   }
 
   async carregarTarefas() {
-    const tarefasDia31 = JSON.parse(await AsyncStorage.getItem('tarefasDia31')) || [];
+    const tarefasDia31 =
+      JSON.parse(await AsyncStorage.getItem('tarefasDia31')) || [];
     this.setState({ tarefas: tarefasDia31 });
   }
 
@@ -1889,15 +2218,16 @@ class Dia31 extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end", marginHorizontal: "100" }}>
+        <View
+          style={styles.BotaoPlus}>
           <TouchableOpacity onPress={() => this.goToCadastraTarefa()}>
             <MaterialCommunityIcons name="plus" color="black" size={20} />
           </TouchableOpacity>
         </View>
 
         {this.state.tarefas.map((tarefa, index) => (
-          <TouchableOpacity 
-            key={index} 
+          <TouchableOpacity
+            key={index}
             style={styles.TouchableOpacity}
             onPress={() => this.goToExibeTarefa(tarefa)}>
             <Text>{tarefa.titulo}</Text>
@@ -1907,147 +2237,6 @@ class Dia31 extends React.Component {
     );
   }
 }
-
-class CadastraTarefa extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      titulo: '',
-      descricao: '',
-    };
-  }
-
-  async salvarTarefa() {
-    const { titulo, descricao } = this.state;
-
-    if (titulo && descricao) {
-      // Carrega as tarefas atuais e adiciona a nova
-      let tarefasExistentes = JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
-      tarefasExistentes.push({ titulo, descricao });
-
-      // Salva as tarefas atualizadas no AsyncStorage
-      await AsyncStorage.setItem('tarefasDia1', JSON.stringify(tarefasExistentes));
-      alert('Tarefa salva com sucesso!');
-      
-      // Retorna para a página Dia1
-      this.props.navigation.navigate('Dia1');
-    } else {
-      alert('Por favor, preencha todos os campos.');
-    }
-  }
-
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center' }}>
-        <TextInput 
-          style={{textAlign: 'center', marginBottom: 10}} 
-          placeholder="Título"
-          onChangeText={(texto) => this.setState({ titulo: texto })}
-        />
-        <TextInput 
-          style={{textAlign: 'center'}} 
-          placeholder="Descrição"
-          onChangeText={(texto) => this.setState({ descricao: texto })}
-        />
-        <TouchableOpacity onPress={() => this.salvarTarefa()}>
-          <MaterialCommunityIcons name="check" color="black" size={20} />
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
-
-class ExibeTarefa extends React.Component {
-  goToEditaTarefa(tarefa) {
-    this.props.navigation.navigate('EditaTarefa', { tarefa });
-  }
-
-  async deletarTarefa() {
-    const { tarefa } = this.props.route.params;
-
-    // Carrega as tarefas do AsyncStorage e remove a tarefa atual
-    let tarefasDia1 = JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
-    tarefasDia1 = tarefasDia1.filter(
-      (item) => !(item.titulo === tarefa.titulo && item.descricao === tarefa.descricao)
-    );
-
-    await AsyncStorage.setItem('tarefasDia1', JSON.stringify(tarefasDia1));
-    alert('Tarefa excluída com sucesso!');
-    this.props.navigation.navigate('Dia1');
-  }
-
-  render() {
-    const { tarefa } = this.props.route.params;
-
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ fontSize: 24, fontWeight: 'bold' }}>{tarefa.titulo}</Text>
-        <Text style={{ marginVertical: 20 }}>{tarefa.descricao}</Text>
-
-        <View style={{ flexDirection: 'row', marginTop: 20 }}>
-          <TouchableOpacity onPress={() => this.goToEditaTarefa(tarefa)} style={{ marginRight: 20 }}>
-            <MaterialCommunityIcons name="pencil" color="black" size={24} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.deletarTarefa()}>
-            <MaterialCommunityIcons name="trash-can" color="black" size={24} />
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
-}
-
-
-
-class EditaTarefa extends React.Component {
-  constructor(props) {
-    super(props);
-    const { tarefa } = this.props.route.params;
-    this.state = {
-      titulo: tarefa.titulo,
-      descricao: tarefa.descricao,
-      originalTarefa: tarefa,
-    };
-  }
-
-  async salvarEdicao() {
-    const { titulo, descricao, originalTarefa } = this.state;
-
-    // Carrega todas as tarefas e atualiza a tarefa selecionada
-    let tarefasDia1 = JSON.parse(await AsyncStorage.getItem('tarefasDia1')) || [];
-    tarefasDia1 = tarefasDia1.map((tarefa) => {
-      if (tarefa.titulo === originalTarefa.titulo && tarefa.descricao === originalTarefa.descricao) {
-        return { titulo, descricao };
-      }
-      return tarefa;
-    });
-
-    await AsyncStorage.setItem('tarefasDia1', JSON.stringify(tarefasDia1));
-    alert('Tarefa editada com sucesso!');
-    this.props.navigation.navigate('Dia1');
-  }
-
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TextInput
-          style={{ textAlign: 'center', marginBottom: 10, fontSize: 18 }}
-          value={this.state.titulo}
-          onChangeText={(texto) => this.setState({ titulo: texto })}
-        />
-        <TextInput
-          style={{ textAlign: 'center', fontSize: 18 }}
-          value={this.state.descricao}
-          onChangeText={(texto) => this.setState({ descricao: texto })}
-        />
-        <TouchableOpacity onPress={() => this.salvarEdicao()}>
-          <MaterialCommunityIcons name="check" color="black" size={24} />
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
-
 
 class App extends React.Component {
   render() {
@@ -2088,6 +2277,80 @@ class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    justifyContent: 'space-around',
+    flexDirection: 'column',
+  },
+  Semana: {
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+  },
+  ContainerInput: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    padding: 20 
+  },
+  TextInput: { 
+    textAlign: 'center', 
+    marginBottom: 10 
+  },
+  ExibeTarefaContainer: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  },
+  Titulo : { 
+    fontSize: 24, 
+    fontWeight: 'bold' 
+  },
+  Descricao: { 
+    marginVertical: 10
+  },
+  Horario: {
+    marginVertical: 10,
+    fontSize: 18,
+    fontWeight: '600',
+  },
+  TouchableOpacityContainer: { 
+    flexDirection: 'row', 
+    marginTop: 20 
+  },
+  TouchableOpacityExibeTarefa: { 
+    marginRight: 20 
+  },
+  ViewContainer: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  },
+  InputEdicaoTarefa: { 
+    textAlign: 'center', 
+    marginBottom: 10, 
+    fontSize: 18 
+  },
+  ContainerTelaRelogio: { 
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  },
+  TxtTelaRelogio: { 
+    fontSize: 24, 
+    marginBottom: 20 
+  },
+  ImgTelaRelogio: { 
+    width: 150, 
+    height: 150 
+  },
+  ViewDia: { 
+    flex: 1, 
+    justifyContent: 'center'
+  },
+  BotaoPlus: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    marginHorizontal: '100',
+  },
   TouchableOpacity: {
     backgroundColor: '#FFF',
     borderColor: '#000',
