@@ -66,5 +66,5 @@ Agradeço aos professores dessa disciplina que durante todo o semestre nos ensir
 
 ## Autor
 
-Nathan Gabriel da Fonseca Leite
+Nathan Gabriel da Fonseca Leite <br>
 Github: https://github.com/NathanGbl

@@ -629,10 +629,10 @@ const styles = StyleSheet.create({
     margin: '0 auto',
   },
   CalendarioContainer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 10, 
     backgroundColor: '#f8f9fa',
@@ -641,7 +641,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
   },
   CalendarioDia: {
-    width: '13.5%',
+    width: '12.5%',
     aspectRatio: 1,
     justifyContent: 'center',
     alignItems: 'center',
