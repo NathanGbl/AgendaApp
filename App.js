@@ -402,7 +402,7 @@ class TelaRelogio extends React.Component {
           <Text>{titulo}</Text>
         </Text>
         <Image
-          source={require('./assets/relogio.jpg')}
+          source={require('./assets/relogio.png')}
           style={styles.ImgTelaRelogio}
         />
         <TouchableOpacity
