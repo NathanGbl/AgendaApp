@@ -4,6 +4,7 @@ import {
   TextInput,
   Text,
   View,
+  Button,
   TouchableOpacity,
   Image,
   Vibration,
@@ -29,6 +30,9 @@ class Principal extends React.Component {
   render() {
     return (
       <View style={styles.ContainerInput}>
+      <Image source={require('./assets/login.png')}
+          style={styles.ImgTelaLogin}
+        />
         <Text style={styles.Label}>{'Usuário:'}</Text>
         <TextInput
           style={styles.TextInput}
@@ -87,6 +91,9 @@ class Cadastro extends React.Component {
   render() {
     return (
       <View style={styles.ContainerInput}>
+      <Image source={require('./assets/cadastro.png')}
+          style={styles.ImgTelaCadastro}
+        />
         <Text style={styles.Label}>{'Cadastrar Usuário:'}</Text>
         <TextInput
           style={styles.TextInput}
@@ -419,7 +426,7 @@ class App extends React.Component {
   componentDidMount() {
     this.interval = setInterval(() => {
       this.verificarTarefas();
-    }, 1000);  segundo
+    }, 1000);
   }
 
   componentWillUnmount() {
@@ -428,23 +435,24 @@ class App extends React.Component {
 
   async verificarTarefas() {
     console.log(this.state.tarefaExibida);
-    if (this.state.tarefaExibida) return;
-
     const agora = new Date();
     const horarioAtual = `${agora.getHours()}:${agora.getMinutes()}`;
+    console.log(this.state.tarefaExibida);
+    console.log(agora.getHours());
+    console.log(agora.getMinutes());
 
     for (let dia = 1; dia <= 31; dia++) {
       const tarefas =
         JSON.parse(await AsyncStorage.getItem(`tarefasDia${dia}`)) || [];
       for (let i = 0; i < tarefas.length; i++) {
         if (tarefas[i].horario === horarioAtual) {
-          this.setState({ tarefaExibida: true });
+          this.setState({ tarefaExibida: !this.tarefaExibida });
           this.navigator.navigate('TelaRelogio', {
             titulo: tarefas[i].titulo,
             descricao: tarefas[i].descricao,
             horario: tarefas[i].horario,
             dia,
-            onTaskDeleted: () => this.setState({ tarefaExibida: false }),
+            onTaskDeleted: () => this.setState({ tarefaExibida: !this.tarefaExibida }),
           });
           break;
         }
@@ -493,15 +501,6 @@ class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  Container: {
-    flex: 1,
-    justifyContent: 'space-around',
-    flexDirection: 'column',
-  },
-  Semana: {
-    justifyContent: 'space-around',
-    flexDirection: 'row',
-  },
   ContainerInput: {
     flex: 1,
     justifyContent: 'center',
@@ -544,9 +543,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20,
-  },
-  TouchableOpacityExibeTarefa: {
-    marginRight: 20,
   },
   ViewContainer: {
     flex: 1,
@@ -621,6 +617,16 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 5,
     alignItems: 'center',
+  },
+  ImgTelaLogin: {
+    width: 150,
+    height: 150,
+    margin: '0 auto',
+  },
+  ImgTelaCadastro: {
+    width: 150,
+    height: 150,
+    margin: '0 auto',
   },
   CalendarioContainer: {
     flex: 1,
