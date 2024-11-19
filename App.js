@@ -436,10 +436,8 @@ class App extends React.Component {
   async verificarTarefas() {
     console.log(this.state.tarefaExibida);
     const agora = new Date();
-    const horarioAtual = `${agora.getHours()}:${agora.getMinutes()}`;
+    const horarioAtual = `${agora.getHours().toString().padStart(2, '0')}:${agora.getMinutes().toString().padStart(2, '0')}`;
     console.log(this.state.tarefaExibida);
-    console.log(agora.getHours());
-    console.log(agora.getMinutes());
 
     for (let dia = 1; dia <= 31; dia++) {
       const tarefas =
